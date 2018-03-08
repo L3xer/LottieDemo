@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.OS;
 using Prism;
 using Prism.Ioc;
+using Lottie.Forms.Droid;
 
 namespace LottieDemo.Droid
 {
@@ -17,6 +18,8 @@ namespace LottieDemo.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            AnimationViewRenderer.Init();
+
             LoadApplication(new App(new AndroidInitializer()));
         }
     }

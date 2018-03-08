@@ -1,10 +1,10 @@
-﻿using Prism;
-using Prism.Ioc;
-using LottieDemo.ViewModels;
-using LottieDemo.Views;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Prism;
+using Prism.Ioc;
 using Prism.Unity;
+using LottieDemo.Views;
+
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace LottieDemo
