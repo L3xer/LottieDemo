@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Essentials.Controls;assembly=Xamarin.Forms.Essentials.Controls"
              x:Class="LottieDemo.Views.MainPage"
              Title="{Binding Title}">
 
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms Lottie Demo!" />
+        <controls:StateContainer State="{Binding State}">
+            <controls:StateCondition Is="NoInternet">
+                <Label Text="No Internet" TextColor="Black"></Label>
+            </controls:StateCondition>
+            <controls:StateCondition Is="Connected">
+                <Label Text="Connected" TextColor="Black"></Label>
+            </controls:StateCondition>
+        </controls:StateContainer>
     </StackLayout>
-
 </ContentPage>
