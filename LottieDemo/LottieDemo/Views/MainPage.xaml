@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:lottie="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              xmlns:controls="clr-namespace:Xamarin.Forms.Essentials.Controls;assembly=Xamarin.Forms.Essentials.Controls"
              x:Class="LottieDemo.Views.MainPage"
              Title="{Binding Title}">
@@ -8,10 +9,16 @@
     <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
         <controls:StateContainer State="{Binding State}">
             <controls:StateCondition Is="NoInternet">
-                <Label Text="No Internet" TextColor="Black"></Label>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <lottie:AnimationView Animation="no_internet_connection.json" Loop="True" AutoPlay="True" />
+                    <Button Text="Retry" TextColor="White" BackgroundColor="#43A047"/>
+                </StackLayout>
             </controls:StateCondition>
             <controls:StateCondition Is="Connected">
-                <Label Text="Connected" TextColor="Black"></Label>
+                <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                    <lottie:AnimationView Animation="checked_done.json" Loop="False" AutoPlay="True" />
+                    <Label Text="Connected" FontSize="18" TextColor="Black" HorizontalOptions="Center"/>
+                </StackLayout>
             </controls:StateCondition>
         </controls:StateContainer>
     </StackLayout>
